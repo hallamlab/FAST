@@ -71,7 +71,7 @@ ALOBJ = src/lastal.o \
 				gumbel_params/sls_alp_sim.o \
 				gumbel_params/sls_pvalues.o \
 
-ALL=lastal+ lastdb+
+ALL=fastal fastdb
 
 VPATH=src:gumbel_params
 
@@ -83,10 +83,10 @@ VPATH=src:gumbel_params
 
 all: $(ALL)
 
-lastal+: $(ALOBJ)
+fastal: $(ALOBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $(ALOBJ)
 
-lastdb+: $(DBOBJ)
+fastdb: $(DBOBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $(DBOBJ) 
 
 clean:
